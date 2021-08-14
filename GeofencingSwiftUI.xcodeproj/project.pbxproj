@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -11,6 +11,14 @@
 		928D2B4326C17B0800ABE408 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 928D2B4226C17B0800ABE408 /* ContentView.swift */; };
 		928D2B4526C17B0900ABE408 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 928D2B4426C17B0900ABE408 /* Assets.xcassets */; };
 		928D2B4826C17B0900ABE408 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 928D2B4726C17B0900ABE408 /* Preview Assets.xcassets */; };
+		928D2B5026C17B1C00ABE408 /* GeofenceState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 928D2B4F26C17B1C00ABE408 /* GeofenceState.swift */; };
+		928D2B5226C17B3D00ABE408 /* GeofenceRegion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 928D2B5126C17B3D00ABE408 /* GeofenceRegion.swift */; };
+		928D2B5426C17B9700ABE408 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 928D2B5326C17B9700ABE408 /* Extensions.swift */; };
+		928D2B5626C17CBB00ABE408 /* LocalNotificationEmitter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 928D2B5526C17CBB00ABE408 /* LocalNotificationEmitter.swift */; };
+		928D2B8326C6D64C00ABE408 /* LocalConsole in Frameworks */ = {isa = PBXBuildFile; productRef = 928D2B8226C6D64C00ABE408 /* LocalConsole */; };
+		928D2B8726C7A9F900ABE408 /* Capture d’écran 2021-08-14 à 09.36.20.png in Resources */ = {isa = PBXBuildFile; fileRef = 928D2B8626C7A9F900ABE408 /* Capture d’écran 2021-08-14 à 09.36.20.png */; };
+		928D2B8A26C7B19400ABE408 /* MapWithLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 928D2B8926C7B19400ABE408 /* MapWithLocation.swift */; };
+		928D2B8C26C7B5FF00ABE408 /* JardinEurope.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 928D2B8B26C7B5FE00ABE408 /* JardinEurope.gpx */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +28,16 @@
 		928D2B4426C17B0900ABE408 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		928D2B4726C17B0900ABE408 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		928D2B4926C17B0900ABE408 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		928D2B4F26C17B1C00ABE408 /* GeofenceState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeofenceState.swift; sourceTree = "<group>"; };
+		928D2B5126C17B3D00ABE408 /* GeofenceRegion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeofenceRegion.swift; sourceTree = "<group>"; };
+		928D2B5326C17B9700ABE408 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		928D2B5526C17CBB00ABE408 /* LocalNotificationEmitter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalNotificationEmitter.swift; sourceTree = "<group>"; };
+		928D2B8426C7A79200ABE408 /* ParcoursTest.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = ParcoursTest.gpx; sourceTree = "<group>"; };
+		928D2B8526C7A96D00ABE408 /* AnnecyPaysages.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = AnnecyPaysages.gpx; sourceTree = "<group>"; };
+		928D2B8626C7A9F900ABE408 /* Capture d’écran 2021-08-14 à 09.36.20.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Capture d’écran 2021-08-14 à 09.36.20.png"; sourceTree = "<group>"; };
+		928D2B8926C7B19400ABE408 /* MapWithLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapWithLocation.swift; sourceTree = "<group>"; };
+		928D2B8B26C7B5FE00ABE408 /* JardinEurope.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = JardinEurope.gpx; sourceTree = "<group>"; };
+		928D2B8D26C7B62F00ABE408 /* JEParcours.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = JEParcours.gpx; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -27,6 +45,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				928D2B8326C6D64C00ABE408 /* LocalConsole in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -36,6 +55,11 @@
 		928D2B3426C17B0800ABE408 = {
 			isa = PBXGroup;
 			children = (
+				928D2B8426C7A79200ABE408 /* ParcoursTest.gpx */,
+				928D2B8D26C7B62F00ABE408 /* JEParcours.gpx */,
+				928D2B8526C7A96D00ABE408 /* AnnecyPaysages.gpx */,
+				928D2B8B26C7B5FE00ABE408 /* JardinEurope.gpx */,
+				928D2B8626C7A9F900ABE408 /* Capture d’écran 2021-08-14 à 09.36.20.png */,
 				928D2B3F26C17B0800ABE408 /* GeofencingSwiftUI */,
 				928D2B3E26C17B0800ABE408 /* Products */,
 			);
@@ -57,6 +81,11 @@
 				928D2B4426C17B0900ABE408 /* Assets.xcassets */,
 				928D2B4926C17B0900ABE408 /* Info.plist */,
 				928D2B4626C17B0900ABE408 /* Preview Content */,
+				928D2B4F26C17B1C00ABE408 /* GeofenceState.swift */,
+				928D2B5126C17B3D00ABE408 /* GeofenceRegion.swift */,
+				928D2B5326C17B9700ABE408 /* Extensions.swift */,
+				928D2B5526C17CBB00ABE408 /* LocalNotificationEmitter.swift */,
+				928D2B8926C7B19400ABE408 /* MapWithLocation.swift */,
 			);
 			path = GeofencingSwiftUI;
 			sourceTree = "<group>";
@@ -85,6 +114,9 @@
 			dependencies = (
 			);
 			name = GeofencingSwiftUI;
+			packageProductDependencies = (
+				928D2B8226C6D64C00ABE408 /* LocalConsole */,
+			);
 			productName = GeofencingSwiftUI;
 			productReference = 928D2B3D26C17B0800ABE408 /* GeofencingSwiftUI.app */;
 			productType = "com.apple.product-type.application";
@@ -112,6 +144,9 @@
 				Base,
 			);
 			mainGroup = 928D2B3426C17B0800ABE408;
+			packageReferences = (
+				928D2B8126C6D64C00ABE408 /* XCRemoteSwiftPackageReference "LocalConsole" */,
+			);
 			productRefGroup = 928D2B3E26C17B0800ABE408 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -126,7 +161,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				928D2B8C26C7B5FF00ABE408 /* JardinEurope.gpx in Resources */,
 				928D2B4826C17B0900ABE408 /* Preview Assets.xcassets in Resources */,
+				928D2B8726C7A9F900ABE408 /* Capture d’écran 2021-08-14 à 09.36.20.png in Resources */,
 				928D2B4526C17B0900ABE408 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -138,8 +175,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				928D2B8A26C7B19400ABE408 /* MapWithLocation.swift in Sources */,
+				928D2B5426C17B9700ABE408 /* Extensions.swift in Sources */,
 				928D2B4326C17B0800ABE408 /* ContentView.swift in Sources */,
 				928D2B4126C17B0800ABE408 /* GeofencingSwiftUIApp.swift in Sources */,
+				928D2B5026C17B1C00ABE408 /* GeofenceState.swift in Sources */,
+				928D2B5226C17B3D00ABE408 /* GeofenceRegion.swift in Sources */,
+				928D2B5626C17CBB00ABE408 /* LocalNotificationEmitter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -328,6 +370,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		928D2B8126C6D64C00ABE408 /* XCRemoteSwiftPackageReference "LocalConsole" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/duraidabdul/LocalConsole/";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.6.2;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		928D2B8226C6D64C00ABE408 /* LocalConsole */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 928D2B8126C6D64C00ABE408 /* XCRemoteSwiftPackageReference "LocalConsole" */;
+			productName = LocalConsole;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 928D2B3526C17B0800ABE408 /* Project object */;
 }

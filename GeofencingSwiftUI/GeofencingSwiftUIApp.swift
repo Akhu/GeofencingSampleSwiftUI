@@ -6,12 +6,19 @@
 //
 
 import SwiftUI
+import LocalConsole
+
+let consoleManager = LCManager.shared
 
 @main
 struct GeofencingSwiftUIApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environmentObject(GeofenceState())
+                .onAppear {
+                    consoleManager.isVisible = true
+                }
         }
     }
 }

@@ -1,0 +1,16 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "LocalConsole",
+        "repositoryURL": "https://github.com/duraidabdul/LocalConsole/",
+        "state": {
+          "branch": null,
+          "revision": "4b79e2744d625e78ba9f029927f40575dd9f1b13",
+          "version": "1.6.2"
+        }
+      }
+    ]
+  },
+  "version": 1
+}

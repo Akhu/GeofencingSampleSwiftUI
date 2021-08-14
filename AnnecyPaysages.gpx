@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<gpx xmlns="http://www.topografix.com/GPX/1/1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd" version="1.1" creator="EditGPX">
+  <trk>
+    <trkseg>
+      <trkpt lat="45.912465" lon="6.143606">
+        <ele>454.3</ele>
+      </trkpt>
+      <trkpt lat="45.910581" lon="6.145175">
+        <ele>455.1</ele>
+      </trkpt>
+      <trkpt lat="45.909190" lon="6.142466">
+        <ele>452.1</ele>
+      </trkpt>
+      
+      <trkpt lat="45.908993" lon="6.142115">
+        <ele>452.3</ele>
+      </trkpt>
+      <trkpt lat="45.906081" lon="6.144828">
+        <ele>453.7</ele>
+      </trkpt>
+      <trkpt lat="45.905120" lon="6.144966">
+        <ele>456.4</ele>
+      </trkpt>
+      <trkpt lat="45.904768" lon="6.144690">
+        <ele>454.5</ele>
+      </trkpt>
+      <trkpt lat="45.904672" lon="6.146254">
+        <ele>455.6</ele>
+      </trkpt>
+      <trkpt lat="45.904192" lon="6.146530">
+        <ele>452.2</ele>
+      </trkpt>
+      <trkpt lat="45.903008" lon="6.145426">
+        <ele>451.2</ele>
+      </trkpt>
+      <trkpt lat="45.902656" lon="6.143770">
+        <ele>451.7</ele>
+      </trkpt>
+      <trkpt lat="45.903904" lon="6.142621">
+        <ele>451.7</ele>
+      </trkpt>
+      <trkpt lat="45.903616" lon="6.141241">
+        <ele>448.5</ele>
+      </trkpt>
+      <trkpt lat="45.904576" lon="6.140735">
+        <ele>452.1</ele>
+      </trkpt>
+      <trkpt lat="45.903040" lon="6.135261">
+        <ele>455.2</ele>
+      </trkpt>
+      <trkpt lat="45.901912" lon="6.133599">
+        <ele>451.2</ele>
+      </trkpt>
+      <trkpt lat="45.900661" lon="6.131908">
+        <ele>449.7</ele>
+      </trkpt>
+      <trkpt lat="45.900514" lon="6.130957">
+        <ele>450.8</ele>
+      </trkpt>
+      <trkpt lat="45.899742" lon="6.131485">
+        <ele>455.3</ele>
+      </trkpt>
+      <trkpt lat="45.898676" lon="6.131697">
+        <ele>451</ele>
+      </trkpt>
+      <trkpt lat="45.899301" lon="6.130376">
+        <ele>454.8</ele>
+      </trkpt>
+      <trkpt lat="45.898529" lon="6.129108">
+        <ele>451.1</ele>
+      </trkpt>
+      <trkpt lat="45.900992" lon="6.127575">
+        <ele>454.5</ele>
+      </trkpt>
+      <trkpt lat="45.900772" lon="6.126043">
+        <ele>458.2</ele>
+      </trkpt>
+      <trkpt lat="45.899742" lon="6.126149">
+        <ele>457.1</ele>
+      </trkpt>
+    </trkseg>
+  </trk>
+</gpx>

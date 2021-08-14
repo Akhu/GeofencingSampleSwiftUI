@@ -1,0 +1,80 @@
+<?xml version="1.0"?>
+<gpx version="1.1" creator="Xcode">
+    <wpt lat="45.898501" lon="6.129549">
+        <name>Step1</name>
+        <time>2021-08-14T10:06:00Z</time>
+    </wpt>
+    <wpt lat="45.899089" lon="6.130329">
+        <name>Step2</name>
+        <time>2021-08-14T10:06:05Z</time>
+    </wpt>
+    
+    <wpt lat="45.899180" lon="6.131598">
+        <name>Step3</name>
+        <time>2021-08-14T10:06:10Z</time>
+    </wpt>
+    <wpt lat="45.908993" lon="6.142115">
+        <name>Step4</name>
+        <time>2021-08-14T10:06:15Z</time>
+    </wpt>
+    
+    <wpt lat="45.898840" lon="6.131955">
+        <name>Step5</name>
+        <time>2021-08-14T10:06:40Z</time>
+    </wpt>
+    
+    <wpt lat="45.899655" lon="6.132085">
+        <name>Step6</name>
+        <time>2021-08-14T10:06:50Z</time>
+    </wpt>
+    
+    <wpt lat="45.899745" lon="6.130817">
+        <name>Step7</name>
+        <time>2021-08-14T10:07:00Z</time>
+    </wpt>
+    
+    <wpt lat="45.900085" lon="6.131370">
+        <name>Step8</name>
+        <time>2021-08-14T10:07:05Z</time>
+    </wpt>
+    
+    <wpt lat="45.900538" lon="6.131370">
+        <name>Step9</name>
+        <time>2021-08-14T10:07:10Z</time>
+    </wpt>
+    
+    <wpt lat="45.900651" lon="6.132183">
+        <name>Step10</name>
+        <time>2021-08-14T10:07:15Z</time>
+    </wpt>
+    
+    <wpt lat="45.901262" lon="6.132703">
+        <name>Step11</name>
+        <time>2021-08-14T10:07:20Z</time>
+    </wpt>
+    
+    <wpt lat="45.901873" lon="6.134817">
+        <name>Step12</name>
+        <time>2021-08-14T10:07:25Z</time>
+    </wpt>
+    
+    <wpt lat="45.902688" lon="6.133679">
+        <name>Step13</name>
+        <time>2021-08-14T10:07:30Z</time>
+    </wpt>
+    
+    <wpt lat="45.901126" lon="6.128085">
+        <name>Step14</name>
+        <time>2021-08-14T10:07:40Z</time>
+    </wpt>
+    
+    <wpt lat="45.900447" lon="6.128670">
+        <name>Step15</name>
+        <time>2021-08-14T10:07:50Z</time>
+    </wpt>
+    
+    <wpt lat="45.900379" lon="6.131175">
+        <name>Step16</name>
+        <time>2021-08-14T10:07:55Z</time>
+    </wpt>
+</gpx>
