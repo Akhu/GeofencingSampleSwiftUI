@@ -29,13 +29,13 @@ class GeofenceState: NSObject, ObservableObject {
     
     @Published var isGeofencingRunning : Bool = false
     
-    @Published var customRegion: GeofenceRegion?
+    @Published var customRegion: CLCircularRegion?
     
     @Published var monitoredLocationAsAnnotationItem = [AnnotationItem]()
     
-    var allRegions = Set<GeofenceRegion>()
+    var allRegions = Set<CLCircularRegion>()
     
-    @Published var monitoredRegions = Set<GeofenceRegion>()
+    @Published var monitoredRegions = Set<CLCircularRegion>()
     
     @Published var radius: CLLocationDistance = 100
     
@@ -78,36 +78,31 @@ class GeofenceState: NSObject, ObservableObject {
         locationManager.delegate = self
         
         self.checkDeadlineOnStartup()
-        
+        print("MonitoredRegions: \(self.locationManager.monitoredRegions.count)")
         
         $monitoredRegions
             .compactMap { regions in
                 regions.map { region in
-                    AnnotationItem(id: region.region.identifier, lat: region.region.center.latitude, lon: region.region.center.longitude)
+                    AnnotationItem(id: region.identifier, lat: region.center.latitude, lon: region.center.longitude)
                 }
             }
             .assign(to: \.monitoredLocationAsAnnotationItem, on: self)
             .store(in: &cancellables)
         
         $customRegionCoordinates
-            .compactMap { coordinatesString -> GeofenceRegion? in
+            .compactMap { coordinatesString -> CLCircularRegion? in
                 let trimmedString = coordinatesString.trimmingCharacters(in: CharacterSet(charactersIn: "( )"))
                 let splited = trimmedString.split(separator: ",")
                 if splited.count > 0 {
-                    let latitudeString = String(splited[0])
                     if let latitude = Double(String(splited[0])), let longitude = Double(String(splited[1])) {
-                    return GeofenceRegion(region:
-                                        CLCircularRegion(center: CLLocationCoordinate2DMake(latitude, longitude),
-                                                         radius: self.radius,
-                                                         identifier: "Custom Region"),
-                                       location: CLLocation(latitude: latitude,
-                                                            longitude: longitude))
+                        return CLCircularRegion(center: CLLocationCoordinate2DMake(latitude, longitude),
+                                                 radius: self.radius,
+                                                 identifier: "Custom Region")
                         }
                         return nil
                     }
                     return nil
                 }
-            
                 .assign(to: \.customRegion, on: self)
                 .store(in: &cancellables)
         
@@ -134,19 +129,16 @@ class GeofenceState: NSObject, ObservableObject {
         self.monitoredRegions.removeAll()
         if let currentLocation = locationManager.location {
             self.monitoredRegions = Set(allRegions
-                                            .sorted(by: { currentLocation.distance(from: $0.location) < currentLocation.distance(from: $1.location )})
+                                            .sorted(by: { currentLocation.distance(from: $0.center.toCLLocation() ) < currentLocation.distance(from: $1.center.toCLLocation() )})
                                             .prefix(maximumRegionsToMonitorAtSameTime))
             
             self.monitoredRegions.forEach { region in
                 region
-                    .region
                     .notifyOnEntry = true
                 region
-                    .region
                     .notifyOnExit = true
                 locationManager
-                    .startMonitoring(for: region
-                                        .region)
+                    .startMonitoring(for:region)
             }
             
             UINotificationFeedbackGenerator().notificationOccurred(.success)
@@ -158,16 +150,16 @@ class GeofenceState: NSObject, ObservableObject {
     /**
      * Start geofencing with an array of regions to monitor
      */
-    func startGeofencing(regionsToMonitor regions: [GeofenceRegion]) {
+    func startGeofencing(regionsToMonitor regions: [CLCircularRegion]) {
         locationManager.startUpdatingLocation()
         
         //ON veut démarrer avec les 20 geofences les plus proches de la position actuelle, il faut fail si la position est pas determinée
         
         if let unwrappedCustomRegion = self.customRegion {
-            unwrappedCustomRegion.region.notifyOnEntry = true
-            unwrappedCustomRegion.region.notifyOnExit = true
+            unwrappedCustomRegion.notifyOnEntry = true
+            unwrappedCustomRegion.notifyOnExit = true
             self.allRegions.insert(unwrappedCustomRegion)
-            locationManager.startMonitoring(for: unwrappedCustomRegion.region)
+            locationManager.startMonitoring(for: unwrappedCustomRegion)
         }
         
         self.allRegions = self.allRegions.union(Set(regions))
@@ -200,54 +192,54 @@ class GeofenceState: NSObject, ObservableObject {
      */
     func updateRegionToMonitor(location: CLLocation) {
         monitoredRegions.forEach { regionMonitored in
-            print("Monitored: \(regionMonitored.region.identifier)")
-            consoleManager.print("Monitored: \(regionMonitored.region.identifier)")
+            print("Monitored: \(regionMonitored.identifier)")
+            consoleManager.print("Monitored: \(regionMonitored.identifier)")
         }
         
         let chunkedSortedRegionsCloser = allRegions
-            .sorted(by: { location.distance(from: $0.location) < location.distance(from: $1.location )})
+            .sorted(by: { location.distance(from: $0.center.toCLLocation() ) < location.distance(from: $1.center.toCLLocation()  )})
             .prefix(maximumRegionsToMonitorAtSameTime)
         
         chunkedSortedRegionsCloser.forEach { region in
-            consoleManager.print("Closes region: \(region.region.identifier)")
-            print("Closes region: \(region.region.identifier)")
+            consoleManager.print("Closes region: \(region.identifier)")
+            print("Closes region: \(region.identifier)")
         }
         
         let regionToKeepMonitoring = Set(chunkedSortedRegionsCloser).intersection(self.monitoredRegions)
         
         regionToKeepMonitoring.forEach { region in
-            consoleManager.print("Intersect: \(region.region.identifier)")
-            print("Intersect: \(region.region.identifier)")
+            consoleManager.print("Intersect: \(region.identifier)")
+            print("Intersect: \(region.identifier)")
         }
         
         let newRegionToMonitor = Set(chunkedSortedRegionsCloser).symmetricDifference(regionToKeepMonitoring)
         
         newRegionToMonitor.forEach { region in
-            consoleManager.print("newRegionToMonitor: \(region.region.identifier)")
-            print("newRegionToMonitor: \(region.region.identifier)")
+            consoleManager.print("newRegionToMonitor: \(region.identifier)")
+            print("newRegionToMonitor: \(region.identifier)")
         }
         
         let newList = newRegionToMonitor.union(regionToKeepMonitoring)
         let toRemove = Set(self.monitoredRegions).symmetricDifference(regionToKeepMonitoring)
         
         newList.forEach { region in
-            consoleManager.print("newList: \(region.region.identifier)")
-            print("newList: \(region.region.identifier)")
+            consoleManager.print("newList: \(region.identifier)")
+            print("newList: \(region.identifier)")
         }
         
         toRemove.forEach { region in
-            consoleManager.print("toRemove: \(region.region.identifier)")
-            print("toRemove: \(region.region.identifier)")
+            consoleManager.print("toRemove: \(region.identifier)")
+            print("toRemove: \(region.identifier)")
         }
         
         //Start Monitoring new Regions
         newRegionToMonitor.forEach { geoRegion in
-            self.locationManager.startMonitoring(for: geoRegion.region)
+            self.locationManager.startMonitoring(for: geoRegion)
         }
         
         //Stop Monitoring old Regions
         toRemove.forEach { geoRegion in
-            if let regionToStopMonitor = self.locationManager.monitoredRegions.first { $0.identifier == geoRegion.region.identifier }
+            if let regionToStopMonitor = self.locationManager.monitoredRegions.first(where: { $0.identifier == geoRegion.identifier })
             {
                 self.locationManager.stopMonitoring(for: regionToStopMonitor)
             }

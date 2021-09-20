@@ -32,13 +32,9 @@ let rawRegions = [
 ]
 
 let regions = rawRegions.map({ (identifier, lat, lon) in
-    GeofenceRegion(region:
                 CLCircularRegion(center: CLLocationCoordinate2DMake(lat, lon),
                                  radius: 80,
-                                 identifier: identifier),
-               location: CLLocation(latitude: lat,
-                                    longitude: lon))
-})
+                                 identifier: identifier)})
 
 struct ContentView: View {
     
@@ -114,8 +110,8 @@ struct ContentView: View {
                     Section(header: Text("Geofences monitored")) {
                         
                         List {
-                            ForEach(Array(geofenceState.monitoredRegions), id: \.region.identifier) { region in
-                                Text("[Region] : \(region.region.identifier)")
+                            ForEach(Array(geofenceState.monitoredRegions), id: \.identifier) { region in
+                                Text("[Region] : \(region.identifier)")
                             }
                         }
                         
