@@ -12,7 +12,6 @@ class LocalNotificationEmitter
 {
     var notifications = [LocalNotification]()
     
-    //TODO: Open the artwork
     func launchNotification(_ notification: LocalNotification) {
         consoleManager.print("will launch notification \(notification.id)")
         print("will launch notification \(notification.id)")

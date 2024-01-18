@@ -67,12 +67,14 @@ extension CLAuthorizationStatus {
 
 
 extension UNUserNotificationCenter {
+    
     func getNotificationSettings() -> Future<UNNotificationSettings,
                                              Never> {
         return Future { promise in
             self.getNotificationSettings { settings in promise(.success(settings))
             } }
     }
+    
     func requestAuthorization(options: UNAuthorizationOptions) ->
     Future<Bool, Error> { return Future { promise in
         self.requestAuthorization(options: options) { result, error in if let error = error {

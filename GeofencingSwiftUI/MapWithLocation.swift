@@ -26,6 +26,7 @@ struct MapKitWithLocation: View {
     
     @EnvironmentObject var geofenceState:GeofenceState
     
+    // Marks on map
     var annotationsItems: [AnnotationItem]
     
     @State private var userTrackingMode: MapUserTrackingMode = .none
@@ -39,7 +40,7 @@ struct MapKitWithLocation: View {
             longitudeDelta: 10
         )
     )
-
+    
     var body: some View {
         ZStack(alignment: .topTrailing) {
             
