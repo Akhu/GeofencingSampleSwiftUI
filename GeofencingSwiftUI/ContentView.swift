@@ -76,6 +76,7 @@ struct ContentView: View {
                             Text("Permissions granted !")
                         }
                     })
+                    
                     .onAppear {
                         geofenceState.loadPermissions()
                     }

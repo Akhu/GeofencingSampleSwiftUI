@@ -79,7 +79,8 @@ class GeofenceState: NSObject, ObservableObject {
                 .assign(to: \.customRegion, on: self)
                 .store(in: &cancellables)
         
-        Publishers.CombineLatest($notificationPermissionState, $localizationPermissionState)
+        Publishers
+            .CombineLatest($notificationPermissionState, $localizationPermissionState)
             .map { (notificationStatus, localizationStatus) -> Bool in
                 if notificationStatus == .notDetermined || notificationStatus == .denied {
                     return false
