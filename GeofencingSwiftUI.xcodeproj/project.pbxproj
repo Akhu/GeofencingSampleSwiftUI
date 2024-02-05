@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9233B9012B70C98E0010FAD8 /* Screenshot.png in Resources */ = {isa = PBXBuildFile; fileRef = 9233B9002B70C98E0010FAD8 /* Screenshot.png */; };
 		928D2B4126C17B0800ABE408 /* GeofencingSwiftUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 928D2B4026C17B0800ABE408 /* GeofencingSwiftUIApp.swift */; };
 		928D2B4326C17B0800ABE408 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 928D2B4226C17B0800ABE408 /* ContentView.swift */; };
 		928D2B4526C17B0900ABE408 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 928D2B4426C17B0900ABE408 /* Assets.xcassets */; };
@@ -16,11 +17,13 @@
 		928D2B5426C17B9700ABE408 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 928D2B5326C17B9700ABE408 /* Extensions.swift */; };
 		928D2B5626C17CBB00ABE408 /* LocalNotificationEmitter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 928D2B5526C17CBB00ABE408 /* LocalNotificationEmitter.swift */; };
 		928D2B8326C6D64C00ABE408 /* LocalConsole in Frameworks */ = {isa = PBXBuildFile; productRef = 928D2B8226C6D64C00ABE408 /* LocalConsole */; };
-		928D2B8726C7A9F900ABE408 /* Capture d’écran 2021-08-14 à 09.36.20.png in Resources */ = {isa = PBXBuildFile; fileRef = 928D2B8626C7A9F900ABE408 /* Capture d’écran 2021-08-14 à 09.36.20.png */; };
+		928D2B8726C7A9F900ABE408 /* Itinerary.png in Resources */ = {isa = PBXBuildFile; fileRef = 928D2B8626C7A9F900ABE408 /* Itinerary.png */; };
 		928D2B8A26C7B19400ABE408 /* MapWithLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 928D2B8926C7B19400ABE408 /* MapWithLocation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9233B9002B70C98E0010FAD8 /* Screenshot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Screenshot.png; sourceTree = "<group>"; };
+		9233B9022B70C9C30010FAD8 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		928D2B3D26C17B0800ABE408 /* GeofencingSwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GeofencingSwiftUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		928D2B4026C17B0800ABE408 /* GeofencingSwiftUIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeofencingSwiftUIApp.swift; sourceTree = "<group>"; };
 		928D2B4226C17B0800ABE408 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -31,7 +34,7 @@
 		928D2B5126C17B3D00ABE408 /* GeofenceRegion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeofenceRegion.swift; sourceTree = "<group>"; };
 		928D2B5326C17B9700ABE408 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		928D2B5526C17CBB00ABE408 /* LocalNotificationEmitter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalNotificationEmitter.swift; sourceTree = "<group>"; };
-		928D2B8626C7A9F900ABE408 /* Capture d’écran 2021-08-14 à 09.36.20.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Capture d’écran 2021-08-14 à 09.36.20.png"; sourceTree = "<group>"; };
+		928D2B8626C7A9F900ABE408 /* Itinerary.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Itinerary.png; sourceTree = "<group>"; };
 		928D2B8926C7B19400ABE408 /* MapWithLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapWithLocation.swift; sourceTree = "<group>"; };
 		928D2B8D26C7B62F00ABE408 /* JEParcours.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = JEParcours.gpx; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -51,8 +54,10 @@
 		928D2B3426C17B0800ABE408 = {
 			isa = PBXGroup;
 			children = (
+				9233B9022B70C9C30010FAD8 /* README.md */,
 				928D2B8D26C7B62F00ABE408 /* JEParcours.gpx */,
-				928D2B8626C7A9F900ABE408 /* Capture d’écran 2021-08-14 à 09.36.20.png */,
+				9233B9002B70C98E0010FAD8 /* Screenshot.png */,
+				928D2B8626C7A9F900ABE408 /* Itinerary.png */,
 				928D2B3F26C17B0800ABE408 /* GeofencingSwiftUI */,
 				928D2B3E26C17B0800ABE408 /* Products */,
 			);
@@ -155,7 +160,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				928D2B4826C17B0900ABE408 /* Preview Assets.xcassets in Resources */,
-				928D2B8726C7A9F900ABE408 /* Capture d’écran 2021-08-14 à 09.36.20.png in Resources */,
+				928D2B8726C7A9F900ABE408 /* Itinerary.png in Resources */,
+				9233B9012B70C98E0010FAD8 /* Screenshot.png in Resources */,
 				928D2B4526C17B0900ABE408 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
